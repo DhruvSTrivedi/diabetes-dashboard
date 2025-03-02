@@ -2,3 +2,7 @@ streamlit
 pandas
 plotly
 statsmodels
+seaborn
+matplotlib.pyplot
+plotly.express
+numpy
