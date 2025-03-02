@@ -1,8 +1,7 @@
 streamlit
 pandas
+matplotlib
+seaborn
 plotly
 statsmodels
-seaborn
-matplotlib.pyplot
-plotly.express
 numpy
