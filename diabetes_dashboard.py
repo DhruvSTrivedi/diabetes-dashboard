@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # Load dataset
-file_path = "/Users/dhruvtrivedi/Downloads/diabetes/diabetes.csv"  # Ensure this file is present when deploying
+file_path = "diabetes.csv"  # Ensure this file is present when deploying
 df = pd.read_csv(file_path)
 
 # Streamlit App Title
