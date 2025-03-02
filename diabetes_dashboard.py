@@ -83,9 +83,19 @@ st.pyplot(fig9)
 
 # Visualization 10: Feature Importance (Using Correlation)
 st.subheader('🔟 Feature Importance')
-feature_importance = df.corr()['Outcome'].abs().sort_values(ascending=False).drop('Outcome')
-fig10 = px.bar(feature_importance, x=feature_importance.index, y=feature_importance.values, title='Feature Importance for Diabetes')
+
+# Ensure only numeric columns are considered
+numeric_df = df.select_dtypes(include=['number'])
+
+# Compute feature importance
+feature_importance = numeric_df.corr()['Outcome'].abs().sort_values(ascending=False).drop('Outcome')
+
+fig10 = px.bar(feature_importance, x=feature_importance.index, y=feature_importance.values,
+               title='Feature Importance for Diabetes',
+               labels={'x': 'Feature', 'y': 'Correlation with Outcome'})
+
 st.plotly_chart(fig10)
+
 
 st.markdown('---')
 st.markdown('**📊 Interactive Streamlit Dashboard for Diabetes Data Exploration!**')
